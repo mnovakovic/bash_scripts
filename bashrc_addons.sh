@@ -1,5 +1,10 @@
 export PATH=$PATH:~/bin:/usr/texbin:$DCF_ROOT/bin:~/repos/androidsigning/tools:~/apportable/apportable_sdk/toolchain/macosx/android-sdk/platform-tools
-export PS1='[\[\e[0;35m\]\d, \t\e[0m\] \u \[\033[0;36m\]\W\[\033[0m\]$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")]\$ ' 
+
+#ZSH can messup with our configuration so the following guard is taking care of it
+if [ -f $ZSH ] 
+then
+	export PS1='[\[\e[0;35m\]\d, \t\e[0m\] \u \[\033[0;36m\]\W\[\033[0m\]$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")]\$ ' 
+fi
 
 ### ALIASES
 
